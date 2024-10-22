@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Amount</title>
+</head>
+<body>
+
+<button onclick="enterAmount()">Enter Amount</button>
+
+<p id="amountDisplay"></p>
+
+<script>
+function enterAmount() {
+    // Prompt the user to enter an amount
+    var amount = prompt("Enter the amount:");
+
+    // Check if the user entered an amount
+    if (amount !== null) {
+        // Display the entered amount on the web page
+        document.getElementById("amountDisplay").innerText = "Entered amount: " + amount;
+    } else {
+        // Display a message if the user canceled the prompt
+        document.getElementById("amountDisplay").innerText = "Amount entry canceled.";
+    }
+}
+</script>
+
+</body>
+</html>
+<script src ="./auction.js"> </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>

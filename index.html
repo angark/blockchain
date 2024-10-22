@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auction Bidding System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="auction.js"></script>
+
+
+
+    <script>
+        async function Connect() {
+            console.log("here");
+            if (typeof web3 !== 'undefine') {
+                const walletAddr = await ethereum.request({ method: "eth_requestAccounts" });
+                console.log(walletAddr);
+                console.log("Metamask is installed");
+                document.getElementById("walletAddrText").innerHTML = walletAddr;
+            }
+            else {
+                console.log("Metamask is not installed");
+            }
+        }
+
+       
+    </script>
+</head>
+
+
+<body>
+    <div class="heading">
+        <h3>Auction smart contract</h3>
+    </div>
+    <button id="connectmetamask" class="connect" type="button" onclick="Connect()"> Connect</button>
+    <br>
+    <p id="walletAddrText" class="address">NOT CONNECT</p>
+    <div class="button">
+        <button type="button" class="submit" onclick="location.href='home.html';">Let's Bid</button>
+    </div>
+    </div>
+
+
+</body>
+</html>

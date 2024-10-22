@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Lottery</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: dimgray;
+    
+  }
+  .container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .button {
+    display: inline-flex;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  .result {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  /* Style for the table container */
+.table-container {
+    display: inline-block;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+/* Style for the table */
+.w3-table-all {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Style for table header and data cells */
+.w3-table-all th, .w3-table-all td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Style for table header cells */
+.w3-table-all th {
+    background-color: #f2f2f2;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Auctioner</h2>
+  <button class="button" onclick="End_Auction()">End Auction</button>
+  <span id="productid4"></span></h3>
+  <br><br>
+  <button class="button" onclick="Highest_bidder()">View Highest Bid</button>
+  <div class="result" id="winner"></div>
+</div>
+
+<table border="2" class="w3-table-all w3-centered">
+  <tr>
+      <th> PARTICIPENT ID</th>
+      <th>PRODUCT</th>
+      <th>BID</th>
+  </tr>
+  
+  <tr>
+      <td>{{ user[0] }}</td>
+      <td>{{ user[1] }}</td>
+      <td>{{ user[2] }}</td>
+      
+  </tr>
+</table>
+<script>
+
+  
+
+    function End_Auction() {
+      document.getElementById("productid4").innerText = "Auction End Succesfully "}
+
+      function Highest_bidder() {
+      document.getElementById("winner").innerText = "The winner is  " + winner;}
+  </script>
+
+
+
+</body>
+</html>

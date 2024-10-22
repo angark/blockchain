@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User and Admin Webpage</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #211f1f;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .container {
+    text-align: center;
+    margin-top: 50px;
+    color: #ffffff;
+  }
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    
+  }
+  .user-button {
+    background-color: #ffffff; /* Blue color */
+    margin-right: 600px;
+    color: black;
+    margin-bottom: -50px;
+    
+  }
+  .user-button:hover{
+    background-color: rgb(7, 107, 237);
+    color: #ffffff;
+  }
+  .admin-button:hover{
+    background-color: black;
+  }
+  .admin-button {
+    background-color: #f0ad4e; /* Orange color */
+    margin-left: 600px;
+    margin-bottom: 10px;
+    margin-top: -150px;
+    
+  }
+  .auctionerimg{
+    margin-left: 900px;
+    margin-top: -990px;
+    margin-right: 70px;
+    height: 420px;
+    width: 300px;
+    justify-content: space-evenly;
+    margin-bottom: 3px;
+   
+  }
+
+  .participentimg
+  {
+    height: 400px;
+    width: 400px;
+    margin-left: 90px;
+  }
+
+  .button admin-button{
+    margin-left: 50%;
+  }
+  
+  
+</style>
+
+</head>
+<body>
+
+<div class="container">
+  <h2>Welcome to the User and Admin Webpage</h2>
+  <form id="participentForm" class="participent-form">
+    <button type="submit" class="button user-button">Participent</button>
+  </form>
+  <form id="auctionerForm" action="auctioner.html">
+    <button type="submit" class="button admin-button">Auctioner</button>
+  </form>
+</div>
+
+
+<div class="participent">
+  <img src="participent.jpg" alt="participent" class="participentimg">
+</div>
+
+<div class="auctioner">
+  <img src="auctioner.jpg" alt="auctioner" class="auctionerimg">
+</div>
+
+
+<script>
+  document.querySelector(".participent-form").addEventListener("submit", function(event) {
+    var username = prompt("Enter Participent Username:");
+    var password = prompt("Enter Participent Password:");
+    var actionUrl;
+
+    if (username === "angark" && password === "angark1234") {
+      actionUrl = "participent1.html";
+    } else if (username === "jay" && password === "jay1234") {
+      actionUrl = "participent2.html";
+    } else if (username === "abhay" && password === "abhay1234") {
+      actionUrl = "participent.html";
+    } else {
+      event.preventDefault(); // Prevent form submission
+      alert("Incorrect Participent Username or Password");
+      return;
+    }
+
+    this.action = actionUrl; // Set the action URL dynamically
+  });
+
+  document.getElementById("auctionerForm").addEventListener("submit", function(event) {
+    var username = prompt("Enter auctioner Username:");
+    var password = prompt("Enter auctioner Password:");
+
+    if (username !== "auctioner" || password !== "auctioner1234") {
+      event.preventDefault(); // Prevent form submission
+      alert("Incorrect auctioner Username or Password");
+    }
+  });
+  
+</script>
+</body>
+</html>
